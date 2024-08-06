@@ -1,0 +1,64 @@
+﻿@using Italy_Recipe_Page.Models;
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common;
+@model X.PagedList.IPagedList<Test>
+@{
+    ViewData["Title"] = "TestsList";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h1>TestsList</h1>
+
+<p>
+    <a asp-action="createTest">Create New</a>
+</p>
+<p>@TempData["Message"]</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                TestName
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                Winner
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Winner.UserId)
+            </td>
+            <td>
+                <a asp-action="updateTest" asp-route-TestId="@item.TestId">Edit</a> |
+                <a asp-controller="HomeAdmin" asp-action="testDetail" asp-route-TestId="@item.TestId">Details</a> |
+                <a asp-action="deleteTest" asp-route-TestId="@item.TestId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@Html.PagedListPager(Model, page => Url.Action("recipeslist", new { page = page }), new
+        X.PagedList.Web.Common.PagedListRenderOptions()
+{
+    LiElementClasses = new List<String> { "page-item" },
+    PageClasses = new List<String> { "page-link" }
+})

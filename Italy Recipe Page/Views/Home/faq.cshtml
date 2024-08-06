@@ -1,0 +1,130 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<div class="ag-format-container">
+    <div class="ag-faq_list">
+        <div class="ag-faq_item">
+            <div class="js-ag-faq_title">
+               1. How to become the member of this site?
+            </div>
+
+            <div class="js-ag-faq_text">
+                you need to buy vip member
+            </div>
+        </div>
+
+        <div class="ag-faq_item">
+            <div class="js-ag-faq_title">
+               2. Will there be any subscription charges?.
+            </div>
+
+            <div class="js-ag-faq_text js-ag-hide">
+                yes
+            </div>
+        </div>
+
+        <div class="ag-faq_item">
+            <div class="js-ag-faq_title">
+                3. How to view the recipes and tips? Will there be any charges for that?
+            </div>
+
+            <div class="js-ag-faq_text js-ag-hide">
+                click on it but some tips / recipe might need payment
+            </div>
+        </div>
+
+        <div class="ag-faq_item">
+            <div class="js-ag-faq_title">
+                4. I am not the registered member of the site. Can i participate in the contest held
+            </div>
+
+            <div class="js-ag-faq_text js-ag-hide">
+                go to contest site and submit something
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+                <style>
+                    .ag-format-container {
+  width: 1142px;
+  margin: 0 auto;
+}
+
+.js-ag-hide {
+  display: none;
+}
+
+.ag-faq_list {
+  padding: 50px 0;
+}
+.ag-faq_item {
+  margin: 0 0 15px;
+}
+.js-ag-faq_title {
+  padding: 15px 30px;
+  background-color: #71b337;
+
+  cursor: pointer;
+
+  font-size: 20px;
+  color: #FFF;
+}
+.js-ag-faq_text {
+  line-height: 1.42;
+  padding: 30px 40px;
+  background-color: #eee;
+
+  font-size: 18px;
+  color: #5b5b5b;
+}
+
+
+media only screen and (max-width: 767px) {
+  .ag-format-container {
+    width: 96%;
+  }
+
+}
+
+media only screen and (max-width: 639px) {
+
+}
+
+media only screen and (max-width: 479px) {
+
+}
+
+media (min-width: 768px) and (max-width: 979px) {
+  .ag-format-container {
+    width: 750px;
+  }
+
+}
+
+media (min-width: 980px) and (max-width: 1161px) {
+  .ag-format-container {
+    width: 960px;
+  }
+
+}
+
+                </style>
+
+  <script>
+    (function ($) {
+        $(function () {
+
+
+            $('.js-ag-faq_title').on('click', function () {
+                $('.js-ag-faq_title').not(this).next('.js-ag-faq_text').slideUp();
+                $(this).next('.js-ag-faq_text').slideToggle();
+            });
+
+
+        });
+    })(jQuery);
+  </script>

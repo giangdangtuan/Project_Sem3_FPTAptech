@@ -1,0 +1,422 @@
+﻿@{
+	Layout = "_Layout";
+}
+@model RecipeViewModel
+@inject IHttpContextAccessor Accessor;
+<!DOCTYPE html>
+<html lang="en">
+
+		<body>
+		<!-- Recipe Background -->
+		<div class="recipeBackground">
+		<img src="~/Image/@Html.DisplayFor(model => model.Recipe.Img)" alt="" />
+		</div>
+
+
+		<!-- Content
+		================================================== -->
+		<div class="container" itemscope itemtype="http://schema.org/Recipe">
+
+			<!-- Recipe -->
+			<div class="twelve columns">
+				<div class="alignment">
+
+					<!-- Header -->
+					<section class="recipe-header">
+						<div class="title-alignment">
+						<h2>@Html.DisplayFor(model => model.Recipe.RecipeName)</h2>
+							<div class="rating five-stars">
+								<div class="star-rating"></div>
+								<div class="star-bg"></div>
+							</div>
+							<span><a href="#reviews">(4 reviews)</a></span>
+						</div>
+					</section>
+
+
+					<!-- Slider -->
+					<div class="recipeSlider rsDefault">
+					<img itemprop="image" class="rsImg" src="~/image/@Html.DisplayFor(model => model.Recipe.Img)" alt="" />
+					</div>
+
+
+					<!-- Details -->
+					<section class="recipe-details" itemprop="nutrition">
+						<ul>
+						<li>Calories: <strong itemprop="recipeYield">@Html.DisplayFor(model => model.Recipe.Calories)</strong></li>
+						<li>Time required :<strong itemprop="prepTime">@Html.DisplayFor(model => model.Recipe.CookDuration)+ mins</strong></li>
+						<li>Prep duration: <strong itemprop="prepTime">@Html.DisplayFor(model => model.Recipe.PreparationTime)+ mins</strong></li>
+						</ul>
+						<a href="#" class="print"><i class="fa fa-print"></i> Print</a>
+						<div class="clearfix"></div>
+					</section>
+
+
+					<!-- Text -->
+				<p>@Html.DisplayFor(model => model.Recipe.Description)</p>
+
+
+					<!-- Ingredients -->
+					<h3>Ingredients</h3>
+				
+					<ul class="ingredients">
+					@{
+						int i = 0;
+					}
+					@foreach (var item in Model.Ingredients)
+					{
+						<li>
+							<input id="check-@i" type="checkbox" name="check" value="check-@i">
+							<label itemprop="ingredients" for="check-@i">@item.Iname</label>
+						</li>
+						i++;
+					}
+				</ul>
+
+
+					<!-- Directions -->
+					<h3>Directions</h3>
+					<ol class="directions" itemprop="recipeInstructions">
+						<li>In a Dutch oven, heat oil over medium heat until hot, but not smoking. Pat the meat dry with paper towels and brown in batches, transferring the meat with a slotted spoon to a bowl as they are done.</li>
+						<li>In the fat remaining in the pot, cook the onions until softened, about 5 minutes. </li>
+						<li>Return meat to the pot with any juices in the bowl and add the tomatoes with juice, chiles, beer, beef broth, oregano, cumin, and Worcestershire sauce. Season with salt and pepper to taste.</li>
+						<li>Bring to a boil and reduce heat. Simmer, partially covered, for 2 1/2 hours or until meat is tender.</li>
+					</ol>
+
+					
+					<!-- Share Post -->
+					<ul class="share-post">
+						@Html.DisplayFor(model => model.Recipe.Description)
+					</ul>
+					<div class="clearfix"></div>
+					
+
+
+					<div class="margin-bottom-40"></div>
+
+
+					<!-- Headline -->
+
+					<h3 class="headline">You may also like</h3>
+					<span class="line margin-bottom-35"></span>
+					<div class="clearfix"></div>
+
+					<div class="related-posts">
+					@{
+						var randomRecipes = Model.Recipes.OrderBy(x => Guid.NewGuid()).Take(3);
+
+					}
+					@foreach (var item in randomRecipes)
+					{
+						<!-- Recipe #1 -->
+						<div class="four recipe-box columns">
+
+							<!-- Thumbnail -->
+							<div class="thumbnail-holder">
+								<a asp-controller="Home" asp-action="RecipeDetail" asp-route-maSP="@item.RecipeId">
+									<img src="~/image/@item.Img" style="width:300px;height:300px">			 
+									<div class="hover-cover"></div>
+									<div class="hover-icon">View Recipe</div>
+								</a>
+							</div>
+
+							<!-- Content -->
+							<div class="recipe-box-content">
+								<h3 class="truncate"><a asp-controller="Home" asp-action="RecipeDetail" asp-route-maSP="@item.RecipeId">@item.RecipeName</a></h3>
+
+								<div class="rating five-stars">
+									<div class="star-rating"></div>
+									<div class="star-bg"></div>
+								</div>
+
+								<div class="recipe-meta"><i class="fa fa-clock-o"></i>@item.PreparationTime mins</div>
+
+								<div class="clearfix"></div>
+							</div>
+
+						</div>
+					}
+					</div>
+					<div class="clearfix"></div>
+
+
+					<div class="margin-top-15"></div>
+
+
+					<!-- Comments
+					================================================== -->
+					
+					<!-- Reviews -->
+					<section class="comments" id="reviews">
+					@{
+						int count=0;
+					}
+						<ul>
+						@foreach (var item in Model.Comments)
+						{
+							<li>
+								<div class="avatar"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70" alt="" /></div>
+								<div class="comment-content">
+									<div class="arrow-comment"></div>
+									<div class="comment-by">
+										<strong>@item.UserId</strong><span class="date"></span>
+									</div>
+									<p>@item.Description</p>
+									<div class="rating five-stars">
+										<div class="star-rating"></div>
+										<div class="star-bg"></div>
+									</div>
+								</div>
+							</li>
+							count++;
+						}
+
+							
+						</ul>
+					<h3 class="headline">Comments <span class="comments-amount">@count</span></h3><span class="line"></span><div class="clearfix"></div>
+
+					</section>
+					<div class="clearfix"></div>
+					<br>
+
+
+					<!-- Add Comment
+					================================================== -->
+
+					<h3 class="headline">Add Review</h3><span class="line margin-bottom-35"></span><div class="clearfix"></div>
+
+					<!-- Add Comment Form -->
+					<form id="add-review" class="add-comment">
+						<fieldset>
+
+							<div>
+								<label>Name:</label>
+								<input type="text" value="" />
+							</div>
+
+							<div>
+								<label>Email: <span>*</span></label>
+								<input type="text" value="" />
+							</div>
+
+							<div>
+								<label>Rating:</label>
+								<span class="rate">
+									<span class="star"></span>
+									<span class="star"></span>
+									<span class="star"></span>
+									<span class="star"></span>
+									<span class="star"></span>
+								</span>
+							</div>
+							<div class="clearfix"></div>
+
+							<div>
+								<label>Comment: <span>*</span></label>
+								<textarea cols="40" rows="3"></textarea>
+							</div>
+
+						</fieldset>
+
+						<a href="#" class="button medium color">Add Review</a>
+						<div class="clearfix"></div>
+
+					</form>
+
+				</div>
+			</div>
+
+
+			<!-- Sidebar
+			================================================== -->
+			<div class="four columns">
+
+				<!-- Search Form -->
+			<div class="widget search-form">
+				<nav class="search">
+
+					<button><i class="fa fa-search"></i></button>
+					<input id="livesearchtags" name="livesearchtags" search-field" type="text" placeholder="Search for recipes" value="" autocomplete="off" />
+					<br /><br /><br />
+					<div id="result" class="tag-results"></div>
+					<br /><br /><br />
+
+				</nav>
+
+
+				<div class="clearfix"></div>
+			</div>
+
+
+				<!-- Author Box -->
+				<div class="widget">
+					<div class="author-box">
+						<span class="title">Author</span>
+						<span class="name">Sandra <br> Fortin</span>
+						<span class="contact"><a href="mailto:sandra@chow.com">sandra@chow.com</a></span>
+						<img src="~/image/author-photo.png" alt="">
+						<p>I'm Sandra and this is where I share my stuff. I am madly in love with food. You will find a balance of healthy recipes, comfort food and indulgent desserts.</p>
+					</div>
+				</div>
+
+
+				<!-- Popular Recipes -->
+				<div class="widget">
+					<h4 class="headline">Popular Recipes</h4>
+					<span class="line margin-bottom-30"></span>
+					<div class="clearfix"></div>
+
+					<!-- Recipe #1 -->
+					<a href="#" class="featured-recipe">
+						<img src="image/featuredRecipe-01.jpg" alt="">
+
+						<div class="featured-recipe-content">
+							<h4>Choclate Cake With Green Tea Cream</h4>
+
+							<div class="rating five-stars">
+								<div class="star-rating"></div>
+								<div class="star-bg"></div>
+							</div>
+						</div>
+						<div class="post-icon"></div>
+					</a>
+
+					<!-- Recipe #2 -->
+					<a href="#" class="featured-recipe">
+						<img src="image/featuredRecipe-02.jpg" alt="">
+
+						<div class="featured-recipe-content">
+							<h4>Mexican Grilled Corn Recipe</h4>
+
+							<div class="rating five-stars">
+								<div class="star-rating"></div>
+								<div class="star-bg"></div>
+							</div>
+						</div>
+						<div class="post-icon"></div>
+					</a>
+
+					<!-- Recipe #3 -->
+					<a href="#" class="featured-recipe">
+						<img src="image/featuredRecipe-03.jpg" alt="">
+
+						<div class="featured-recipe-content">
+							<h4>Pollo Borracho With Homemade Tortillas</h4>
+
+							<div class="rating five-stars">
+								<div class="star-rating"></div>
+								<div class="star-bg"></div>
+							</div>
+						</div>
+						<div class="post-icon"></div>
+					</a>
+
+					<div class="clearfix"></div>
+				</div>
+
+
+				<!-- Popular Recipes -->
+				<div class="widget">
+					<h4 class="headline">Share</h4>
+					<span class="line margin-bottom-30"></span>
+					<div class="clearfix"></div>
+
+					<ul class="share-buttons">
+						<li class="facebook-share">
+							<a href="#">
+								<span class="counter">1,234</span>
+								<span class="counted">Fans</span>
+								<span class="action-button">Like</span>
+							</a>
+						</li>
+
+						<li class="twitter-share">
+							<a href="#">
+								<span class="counter">863</span>
+								<span class="counted">Followers</span>
+								<span class="action-button">Follow</span>
+							</a>
+						</li>
+
+						<li class="google-plus-share">
+							<a href="#">
+								<span class="counter">902</span>
+								<span class="counted">Followers</span>
+								<span class="action-button">Follow</span>
+							</a>
+						</li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+
+			</div>
+
+
+		</div>
+		<!-- Container / End -->
+	</body>
+
+	
+	
+
+
+	
+
+	<!-- Java Script
+	================================================== -->
+	<script src="~/js/jquery-1.11.0.min.js"></script>
+	<script src="~/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="~/js/jquery.superfish.js"></script>
+	<script src="~/js/jquery.royalslider.min.js"></script>
+	<script src="~/js/responsive-nav.js"></script>
+	<script src="~/js/hoverIntent.js"></script>
+	<script src="~/js/isotope.pkgd.min.js"></script>
+	<script src="~/js/chosen.jquery.min.js"></script>
+	<script src="~/js/jquery.tooltips.min.js"></script>
+	<script src="~/js/jquery.magnific-popup.min.js"></script>
+	<script src="~/js/jquery.pricefilter.js"></script>
+	<script src="~/js/custom.js"></script>
+
+
+	<!-- Style Switcher
+	================================================== -->
+	
+
+
+
+</html>
+
+<style>
+	.truncate {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 1; /* number of lines to show */
+		line-clamp: 1;
+		-webkit-box-orient: vertical;
+	}
+</style>
+
+	
+		<script>
+	document.getElementById('livesearchtags').addEventListener('keyup', function (e) {
+		//Run LiveSearch on ever key up
+		LiveSearch()
+	});
+
+	function LiveSearch() {
+		//Get the input value
+		let value = document.getElementById('livesearchtags').value
+
+		$.ajax({
+			type: "POST",
+			url: '@Url.Action("LiveTagSearch","Home")',
+			data: { search: value },
+			datatype: "html",
+			success: function (data) {
+				$('#result').html(data);
+			}
+		});
+	}
+		</script>
+

@@ -1,0 +1,172 @@
+﻿@inject IHttpContextAccessor Accessor;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="~/css/site.css" />
+		<link rel="stylesheet" href="~/css/base.css">
+		<script src="https://kit.fontawesome.com/82bbb3ea06.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="~/css/style.css">
+		<link rel="stylesheet" href="~/css/green.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	</head>
+
+	<!-- Header
+		================================================== -->
+	<header id="header">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Logo / Mobile Menu -->
+			<div class="three columns">
+				<div id="logo">
+					<h1><a asp-controller="Home" asp-action="Index"><img src="~/Image/logo.png" /></a></h1>
+				</div>
+			</div>
+
+			<!-- Navigation
+			================================================== -->
+			<div class="thirteen columns navigation">
+
+				<nav id="navigation" class="menu nav-collapse">
+					<ul>
+						<li>
+							<a asp-controller="Home" asp-action="Index">Home</a>
+						</li>
+
+						<li>
+							<a>Category</a>
+							<ul>
+								<li>@await Component.InvokeAsync("Category")</li>
+							</ul>
+						</li>
+
+						<li>
+							<a asp-controller="Home" asp-action="Tips">Tips</a>
+						</li>
+
+						<li>
+							<a asp-controller="Recipes" asp-action="Create">Submission</a>
+							
+						</li>
+
+						<li><a asp-controller ="Home" asp-action="contest">Contest</a></li>
+
+						<li><a asp-controller="Home" asp-action="faq"> FAQ</a></li>
+			
+						@if (Accessor.HttpContext.Session.GetString("Username") == null)
+						{
+							<li><a asp-controller="Access" asp-action="Login"> <i class="fa-solid fa-user"></i></a></li>
+						}
+						else
+						{
+							<li>
+								<a asp-controller="Home" asp-action="Shop">Shop</a>
+
+							</li>
+							<li><a asp-controller="Users" asp-action="Edit" asp-route-id="@Accessor.HttpContext.Session.GetString("id")"> update info</a></li>
+							<li><a asp-controller="Access" asp-action="Logout"> Log out</a></li>
+						}
+
+						
+
+					</ul>
+				</nav>
+
+			</div>
+
+		</div>
+		<!-- Container / End -->
+	</header>
+   
+</head>
+
+    <header>
+      
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+<body>
+   
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+<footer>
+	<div id="footer">
+
+		<!-- Container -->
+		<div class="container">
+
+			<div class="five columns">
+				<!-- Headline -->
+				<h3 class="headline footer">About</h3>
+				<span class="line"></span>
+				<div class="clearfix"></div>
+				<p>Cras at ultrices erat, sed vulputate eros. Nunc at augue gravida est fermentum vulputate. Pellentesque et ipsum in dui malesuada tempus.</p>
+			</div>
+
+			<div class="three columns">
+
+				<!-- Headline -->
+				<h3 class="headline footer">Archives</h3>
+				<span class="line"></span>
+				<div class="clearfix"></div>
+
+				<ul class="footer-links">
+					<li><a href="#">June 2014</a></li>
+					<li><a href="#">July 2014</a></li>
+					<li><a href="#">August 2014</a></li>
+					<li><a href="#">September 2014</a></li>
+					<li><a href="#">November 2014</a></li>
+				</ul>
+
+			</div>
+
+			<div class="three columns">
+
+				<!-- Headline -->
+				<h3 class="headline footer">Recipes</h3>
+				<span class="line"></span>
+				<div class="clearfix"></div>
+
+				<ul class="footer-links">
+					<li><a href="browse-recipes.html">Browse Recipes</a></li>
+					<li><a href="recipe-page-1.html">Recipe Page</a></li>
+					<li><a href="submit-recipe.html">Submit Recipe</a></li>
+				</ul>
+
+			</div>
+
+			<div class="five columns">
+
+				<!-- Headline -->
+				<h3 class="headline footer">Newsletter</h3>
+				<span class="line"></span>
+				<div class="clearfix"></div>
+				<p>Sign up to receive email updates on new product announcements, gift ideas, sales and more.</p>
+
+				<form action="#" method="get">
+					<input class="newsletter" type="text" placeholder="mail@example.com" value="" />
+					<button class="newsletter-btn" type="submit">Subscribe</button>
+
+				</form>
+			</div>
+
+		</div>
+		<!-- Container / End -->
+
+	</div>
+	<!-- Footer / End -->
+</footer>
+</html>

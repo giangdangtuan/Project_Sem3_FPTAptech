@@ -1,0 +1,121 @@
+﻿@model User;
+@{
+    Layout = "";
+}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/Register.css">
+    <script src="/_framework/aspnetcore-browser-refresh.js"></script>
+</head>
+
+<body style="background-color: #3c3f41">
+    <div class="container" id="container">
+
+        
+        <div class="form-container sign-in-container">
+
+            @using (Html.BeginForm("Login", "Access", FormMethod.Post))
+            {
+                <h1>Sign in</h1>
+                <div class="form-control" placeholder="username">
+                    @Html.TextBoxFor(x => x.Username, new { @class = "form-control form-control-lg", required = "required", placeholder = "Enter your username", autofocus = "autofocus" })
+                </div>
+                <span class="form-message"></span>
+                <div class="form-control" placeholder="username" required>
+                    @Html.TextBoxFor(x => x.Pass, new { @class = "form-control form-control-lg", type = "password", required = "required", placeholder = "Enter your password", autofocus = "autofocus" })
+                </div>
+                <input type="submit" value="Sign in" id="b1">
+            }
+
+
+        </div>
+
+        <div class="form-container sign-up-container">
+            @using (Html.BeginForm("SignUp", "Access", FormMethod.Get))
+            {
+                <h1>Sign Up</h1>
+                <div class="form-control" placeholder="username">
+                    @Html.TextBoxFor(x => x.Username, new { @class = "form-control form-control-lg", required = "required", placeholder = "Enter your username", autofocus = "autofocus" })
+                </div>
+                <span class="form-message"></span>
+                <div class="form-control" placeholder="username" required>
+                    @Html.TextBoxFor(x => x.Pass, new { @class = "form-control form-control-lg", type = "password", required = "required", placeholder = "Enter your password", autofocus = "autofocus" })
+                </div>
+                
+                <input type="submit" value="Sign up" id="b1">
+            }
+        </div>
+
+
+        <div class="overlay-container">
+            <div class="overlay">
+                <!--            //di chuyen-->
+                <div class="overlay-panel overlay-left">
+                    <h1>Already have an account ?!</h1>
+                    <p>Log in now to see our latest recipe</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <!--            //di chuyen-->
+                <div class="overlay-panel overlay-right">
+                    <h1>Want to be a better chef?</h1>
+                    <p>Enter your personal details and start now</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <p>
+        Created with <i class="fa fa-heart"></i> by
+        <a target="_blank" href="https://florin-pop.com">Florin Pop</a>
+        - Read how I created this and how you can join the challenge
+        <a target="_blank" href="https://www.florin-pop.com/blog/2019/03/double-slider-sign-in-up-form/">here</a>.
+    </p>
+</footer>
+</html>
+<script src="~/js/Register.js"></script>
+<script src="Public/js/validate.js"></script>
+<style>
+    #b1:hover {
+        color: red;
+        border: red;
+        border-width: 1px;
+        border-style: solid;
+    }
+
+    button {
+        border-radius: 20px;
+        border: 1px solid #FF4B2B;
+        background-color: #FF4B2B;
+        color: #FFFFFF;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 12px 45px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: transform 80ms ease-in;
+    }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        button.ghost {
+            background-color: transparent;
+            border-color: #FFFFFF;
+        }
+
+</style>

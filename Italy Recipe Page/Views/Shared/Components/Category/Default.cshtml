@@ -1,0 +1,7 @@
+﻿@model IEnumerable<Category>
+
+@foreach(var item in Model)
+{
+    <a asp-controller="Home" asp-action="Categoryrecipe" asp-route-maLoai="@item.CatId">@item.CatName</a>
+}
+

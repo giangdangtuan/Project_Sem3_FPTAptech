@@ -1,0 +1,281 @@
+﻿@{
+	Layout = "_Layout";
+}
+
+@model X.PagedList.IPagedList<Recipe>
+@using X.PagedList.Mvc.Core
+@inject IHttpContextAccessor Accessor;
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+	
+		<!-- Wrapper -->
+		<div id="wrapper">
+			<!-- Slider
+			================================================== -->
+	
+		<div id="homeSlider" class="royalSlider rsDefaultInv" style="width:100%">
+		@foreach (var item in Model.Take(5))
+		{
+				<!-- Slide #1 -->
+				<div class="rsContent">
+				<img class="rsImg" src="image/@item.Img"></img>
+					<i class="rsTmb">@item.RecipeName</i>
+
+					<!-- Slide Caption -->
+					<div class="SlideTitleContainer rsABlock">
+						<div class="CaptionAlignment">
+							<div class="rsSlideTitle tags">
+								<ul>
+									<li>@item.RecipeName</li>
+								</ul>
+								<div class="clearfix"></div>
+							</div>
+
+						<h2 class="rsSlideTitle title"><a href="recipe-page-1.html">@item.RecipeName</a></h2>
+
+							
+
+						<a asp-controller="Home" asp-action="RecipeDetail" asp-route-maSP="@item.RecipeId" class="rsSlideTitle button">View Recipe</a>
+						</div>
+					</div>
+
+				</div>
+			
+			}
+		
+	</div>
+
+			<!-- Content
+			================================================== -->
+			<div class="container">
+
+				<!-- Masonry -->
+				<div class="twelve columns ">
+
+					<!-- Headline -->
+					<h3 class="headline">Latest Recipes</h3>
+					<span class="line rb margin-bottom-35"></span>
+					<div class="clearfix"></div>
+
+					<!-- Isotope -->
+					<div class="list-style">
+						@foreach (var item in Model)
+						{
+							<!-- Recipe #1 -->
+							<div class="four recipe-box columns">
+
+								<!-- Thumbnail -->
+								<div class="thumbnail-holder">
+									<a asp-controller="Home" asp-action="RecipeDetail" asp-route-maSP="@item.RecipeId">
+										<img src="image/@item.Img" style="width:100%;height:100%"/>
+										<div class="hover-cover"></div>
+										<div class="hover-icon">View Recipe</div>
+									</a>
+								</div>
+
+								<!-- Content -->
+								<div class="recipe-box-content">
+							<h3><a asp-controller="Home" asp-action="RecipeDetail" asp-route-maSP="@item.RecipeId">@item.RecipeName</a></h3>
+
+									<p class="truncate">@item.Description</p>
+
+									<div class="rating five-stars">
+										<div class="star-rating"></div>
+										<div class="star-bg"></div>
+									</div>
+
+									<div class="meta-alignment">
+										<div class="recipe-meta"><i class="fa fa-clock-o"></i> @item.CookDuration</div>
+									</div>
+
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							
+						}
+						
+					</div>
+					
+					<div class="clearfix"></div>
+					
+					<!-- Pagination -->
+			<div class="pagination">
+				<ul>
+				<li class="active">@Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))</li>
+				</ul>
+			</div>
+					
+				</div>
+
+
+				<!-- Sidebar
+				================================================== -->
+				<div class="four columns">
+
+					<!-- Search Form -->
+					<div class="widget search-form" >
+						<nav class="search">
+							
+						<button><i class="fa fa-search"></i></button>
+						<input id="livesearchtags" name="livesearchtags" search-field" type="text" placeholder="Search for recipes" value="" autocomplete="off" />
+						<br /><br /><br />
+						<div id="result" class="tag-results"></div>
+						<br /><br /><br />
+							
+						</nav>
+
+					
+						<div class="clearfix"></div>
+					</div>
+
+
+					<!-- Categories -->
+					<div class="widget">
+						<h4 class="headline">Categories</h4>
+						<span class="line margin-bottom-20"></span>
+						<div class="clearfix"></div>
+				<ul class="categories">					
+					<li>@await Component.InvokeAsync("Category")</li>
+				</ul>
+						
+						<div class="clearfix"></div>
+					</div>
+
+			
+					<!-- Popular Recipes -->
+					<div class="widget">
+						<h4 class="headline">Share</h4>
+						<span class="line margin-bottom-30"></span>
+						<div class="clearfix"></div>
+
+						<ul class="share-buttons">
+							<li class="facebook-share">
+								<a href="#">
+									<span class="counter">1,234</span>
+									<span class="counted">Fans</span>
+									<span class="action-button">Like</span>
+								</a>
+							</li>
+
+							<li class="twitter-share">
+								<a href="#">
+									<span class="counter">863</span>
+									<span class="counted">Followers</span>
+									<span class="action-button">Follow</span>
+								</a>
+							</li>
+
+							<li class="google-plus-share">
+								<a href="#">
+									<span class="counter">902</span>
+									<span class="counted">Followers</span>
+									<span class="action-button">Follow</span>
+								</a>
+							</li>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+
+				</div>
+
+
+			</div>
+			<!-- Container / End -->
+
+			<div class="margin-top-5"></div>
+
+
+		</div>
+		<!-- Wrapper / End -->
+		<!-- Footer
+		================================================== -->
+		
+
+		<!-- Footer Bottom / End -->
+
+
+
+
+		<!-- Java Script
+		================================================== -->
+		<script src="js/jquery-1.11.0.min.js"></script>
+		<script src="js/jquery-migrate-1.2.1.min.js"></script>
+		<script src="js/jquery.superfish.js"></script>
+		<script src="js/jquery.royalslider.min.js"></script>
+		<script src="js/responsive-nav.js"></script>
+		<script src="js/hoverIntent.js"></script>
+		<script src="js/isotope.pkgd.min.js"></script>
+		<script src="js/chosen.jquery.min.js"></script>
+		<script src="js/jquery.tooltips.min.js"></script>
+		<script src="js/jquery.magnific-popup.min.js"></script>
+		<script src="js/jquery.pricefilter.js"></script>
+		<script src="js/custom.js"></script>
+
+
+
+
+
+	
+</html>
+
+	<main>
+	@{
+		RenderBody();
+	}
+	</main>
+
+
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+
+</html>
+
+		<script>
+	document.getElementById('livesearchtags').addEventListener('keyup', function (e) {
+		//Run LiveSearch on ever key up
+		LiveSearch()
+	});
+
+	function LiveSearch() {
+		//Get the input value
+		let value = document.getElementById('livesearchtags').value
+
+		$.ajax({
+			type: "POST",
+			url: '@Url.Action("LiveTagSearch","Home")',
+			data: { search: value },
+			datatype: "html",
+			success: function (data) {
+				$('#result').html(data);
+			}
+		});
+	}
+		</script>
+
+<style>
+.truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2; /* number of lines to show */
+	line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+	.pagination1 a.active {
+		background-color: #4CAF50;
+		color: white;
+	}
+
+	.pagination1 a:hover:not(.active) {
+		background-color: #ddd;
+	}
+</style>
+

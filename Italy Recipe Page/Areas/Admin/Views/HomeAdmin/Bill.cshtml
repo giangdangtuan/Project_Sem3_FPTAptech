@@ -1,0 +1,42 @@
+﻿@using Italy_Recipe_Page.Models;
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common;
+@model List<Bill>
+@{
+    ViewData["Title"] = "RecipesList";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h1>Bill List</h1>
+
+<p>@TempData["Message"]</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Bill Id
+            </th>
+            <th>
+                Total
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BillId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+
+

@@ -1,0 +1,104 @@
+﻿@inject IHttpContextAccessor Accessor;
+@model X.PagedList.IPagedList<Pack>
+@using X.PagedList.Mvc.Core
+
+<!-- Titlebar
+================================================== -->
+<section id="titlebar">
+	<!-- Container -->
+	<div class="container">
+
+		<div class="eight columns">
+			<h2>Shop</h2>
+		</div>
+
+		<div class="eight columns">
+			<nav id="breadcrumbs">
+				<ul>
+					<li>You are here:</li>
+					<li><a asp-controller="Home" asp-action="Index">Home</a></li>
+					<li>Shop</li>
+				</ul>
+			</nav>
+		</div>
+
+	</div>
+	<!-- Container / End -->
+</section>
+
+
+
+<!-- Content
+================================================== -->
+<div class="container">
+
+	<!-- Products -->
+	<div class="twelve columns left-sidebar-class">
+
+		<!-- Ordering -->
+		
+		<div class="clearfix"></div>
+
+
+		<!-- Product #1 -->
+		@foreach (var item in Model)
+				{
+		<div class="four shop columns">
+			<figure class="product">
+
+				<div class="mediaholder">
+					<a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@item.PackId">
+						<img alt="" src="images/shop_item_01.jpg" />
+					</a>
+					
+				</div>
+
+					<a asp-controller ="Cart" asp-action="AddToCart" asp-route-id="@item.PackId">
+						<section>
+							<h5>@item.PackName membership</h5>
+							<span class="product-price">$@item.PackLenght</span>
+						</section>
+					</a>
+				
+			</figure>
+		</div>
+		}
+
+		<div class="clearfix"></div>
+		<div class="margin-top-40"></div>
+
+
+	</div>
+
+
+	<!-- Sidebar
+	================================================== -->
+	<div class="four columns">
+
+		<!-- Search Form -->
+		<div class="widget search-form">
+			<nav class="search">
+				<form action="#" method="get">
+					<button><i class="fa fa-search"></i></button>
+					<input class="search-field" type="text" placeholder="Search for products" value="" />
+				</form>
+			</nav>
+			<div class="clearfix"></div>
+		</div>
+		<div>
+			@Accessor.HttpContext.Session.GetString("date")
+		</div>
+		
+
+		
+
+	</div>
+
+</div>
+<!-- Container / End -->
+
+
+<div class="margin-top-5"></div>
+
+</div>
+<!-- Wrapper / End -->

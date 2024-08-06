@@ -1,0 +1,66 @@
+﻿@using Italy_Recipe_Page.Models;
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common;
+@model X.PagedList.IPagedList<Tip>
+
+@{
+    ViewData["Title"] = "TipsList";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h1>TipsList</h1>
+
+<p>
+    <a asp-action="createTip">Create New</a>
+</p>
+<p>@TempData["Message"]</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Description
+            </th>
+            <th>
+                TipName
+            </th>
+            <th>
+                TipRole
+            </th>
+            <th>
+                User
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipRole)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.UserId)
+            </td>
+            <td>
+                <a asp-action="updateTip" asp-route-TipId="@item.TipId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TipId">Details</a> |
+                <a asp-action="deleteTip" asp-route-TipId="@item.TipId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@Html.PagedListPager(Model, page => Url.Action("tipsList", new { page = page }), new
+    X.PagedList.Web.Common.PagedListRenderOptions()
+           {
+               LiElementClasses = new List<String> { "page-item" },
+               PageClasses = new List<String> { "page-link" }
+           })

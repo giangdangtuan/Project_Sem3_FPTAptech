@@ -1,0 +1,203 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Italy_Recipe_Page
+build_property.RootNamespace = Italy_Recipe_Page
+build_property.ProjectDir = C:\Users\giang\source\repos\.Net\Italy Recipe Page\Italy Recipe Page\Italy Recipe Page\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\giang\source\repos\.Net\Italy Recipe Page\Italy Recipe Page\Italy Recipe Page
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Areas/Admin/Views/HomeAdmin/Bill.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXEJpbGwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Areas/Admin/Views/HomeAdmin/Category.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXENhdGVnb3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Areas/Admin/Views/HomeAdmin/Comment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXENvbW1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Areas/Admin/Views/HomeAdmin/CommentsList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXENvbW1lbnRzTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Areas/Admin/Views/HomeAdmin/CreateRecipe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXENyZWF0ZVJlY2lwZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Areas/Admin/Views/HomeAdmin/CreateTest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXENyZWF0ZVRlc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Areas/Admin/Views/HomeAdmin/CreateTip.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXENyZWF0ZVRpcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Areas/Admin/Views/HomeAdmin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Areas/Admin/Views/HomeAdmin/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXFByb2ZpbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Areas/Admin/Views/HomeAdmin/RecipesList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXFJlY2lwZXNMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Areas/Admin/Views/HomeAdmin/TestDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXFRlc3REZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Areas/Admin/Views/HomeAdmin/TestsList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXFRlc3RzTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Areas/Admin/Views/HomeAdmin/TipsList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXFRpcHNMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Areas/Admin/Views/HomeAdmin/UpdateRecipe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXFVwZGF0ZVJlY2lwZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Areas/Admin/Views/HomeAdmin/UpdateTip.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFkbWluXFVwZGF0ZVRpcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Access/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXNzXExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Cart/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Home/CategoryRecipe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXRlZ29yeVJlY2lwZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Home/faq.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxmYXEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Recipes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVjaXBlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Shared/Components/Category/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2F0ZWdvcnlcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Shared/contest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXGNvbnRlc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Shared/ContestPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbnRlc3RQYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Shared/fail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXGZhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Shared/fail2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXGZhaWwyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Shared/In.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Shared/IndexPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEluZGV4UGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Shared/infail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXGluZmFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Shared/LiveTagSearch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExpdmVUYWdTZWFyY2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Shared/NotificationRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE5vdGlmaWNhdGlvblJvbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Shared/RecipeDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFJlY2lwZURldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Shared/shop.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXHNob3AuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Shared/Success.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFN1Y2Nlc3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Shared/Tips.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFRpcHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Users/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/View.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/giang/source/repos/.Net/Italy Recipe Page/Italy Recipe Page/Italy Recipe Page/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-aehga3ezv0

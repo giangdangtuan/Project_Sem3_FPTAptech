@@ -1,0 +1,26 @@
+﻿@using Italy_Recipe_Page.Models;
+@model List<Recipe>
+@{
+	Layout = "";
+}
+@foreach (var item in Model.Take(3))
+{
+	<div style="width:300px;height:300px;padding-bottom:10%">
+		<!-- Thumbnail -->
+		<div class="thumbnail-holder">
+			<a asp-controller="Home" asp-action="RecipeDetail" asp-route-maSP="@item.RecipeId">
+				<img src="~/Image/@item.Img" alt="" style="width:300px;height:300px;padding-bottom:10%" />
+				<div class="hover-cover"></div>
+				<div class="hover-icon">View Recipe</div>
+			</a>
+		</div>
+
+		<!-- Content -->
+		<div class="recipe-box-content">
+			<h3><a asp-controller="Home" asp-action="RecipeDetail" asp-route-maSP="@item.RecipeId">@item.RecipeName</a></h3>
+		</div>
+	</div>
+	<br />
+	<br />
+	<br />
+}

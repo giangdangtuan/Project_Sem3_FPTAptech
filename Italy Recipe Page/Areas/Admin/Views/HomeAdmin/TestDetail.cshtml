@@ -1,0 +1,52 @@
+﻿@using Italy_Recipe_Page.Models;
+@{
+    ViewData["Title"] = "TestDetail";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<TestDetail>
+<h1>TestsList</h1>
+
+<p>
+    <a asp-action="createTest">Create New</a>
+</p>
+<p>@TempData["Message"]</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                UserName
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Winner
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.RadioButtonFor(modelItem => item.TickWinner, true) Winner;
+                </td>
+                <td>
+                    <a asp-action="updateTest" asp-route-TestId="@item.TestId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.TestId">Details</a> |
+                    <a asp-action="deleteTest" asp-route-TestId="@item.TestId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
